@@ -7,6 +7,8 @@
 <body>
 <form action="cadastro" method="POST">
 
+
+
     <div class="container-md">
 
         <p class="text-center fs-1">Ada Polo Tech Locadora de Veículos</p>

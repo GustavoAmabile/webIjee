@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,17 +24,20 @@ public class Cadastro extends HttpServlet {
         String modelo = req.getParameter("modelo");
         String dataDeRetirada = req.getParameter("data_retirada");
         String dataDeDevolucao = req.getParameter("data_devolucao");
-        Long diarias;
+
+
 
 
 
         LocalDate inicioAluguel = LocalDate.parse(dataDeRetirada);
+        DateTimeFormatter dataAluguelFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        dataDeRetirada = inicioAluguel.format(dataAluguelFormatter);
+
         LocalDate fimAluguel = LocalDate.parse(dataDeDevolucao);
-        diarias = ChronoUnit.DAYS.between(inicioAluguel, fimAluguel);
+        DateTimeFormatter dataDevolucaoFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        dataDeDevolucao = fimAluguel.format(dataDevolucaoFormatter);
 
-
-
-
+        long diarias = ChronoUnit.DAYS.between(inicioAluguel, fimAluguel);
 
         if (
                 tipo.equals("") || marca.equals("") || modelo.equals("")

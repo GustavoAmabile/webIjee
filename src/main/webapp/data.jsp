@@ -6,7 +6,11 @@
     </head>
     <body>
 
+      <%
+              String aluguel = (String) request.getAttribute("data_retirada");
 
+              String retorno = (String) request.getAttribute("data_devolucao");
+      %>
 
       <div class="container-md">
 
@@ -36,14 +40,14 @@
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Retirada</label>
             <div class="col-md-10">
-              <input type="date" readonly class="form-control-plaintext" id="staticRetirada" value="<%= request.getAttribute("dataDeRetirada") %>">
+              <input type="text" readonly class="form-control-plaintext" id="staticRetirada" value=<%=aluguel%>>
             </div>
           </div>
 
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Devolução</label>
             <div class="col-md-10">
-              <input type="date" readonly class="form-control-plaintext" id="staticDevolução" value="<%= request.getAttribute("dataDeDevolucao") %>">
+              <input type="text" readonly class="form-control-plaintext" id="staticDevolução" value=<%=retorno%>>
             </div>
           </div>
 
