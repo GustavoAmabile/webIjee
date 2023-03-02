@@ -7,28 +7,41 @@
 <body>
 <form action="cadastro" method="POST">
 
-
-
     <div class="container-md">
 
         <p class="text-center fs-1">Ada Polo Tech Locadora de Veículos</p>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Tipo</span>
-          <input type="text" name="tipo" class="form-control">
+          <span class="input-group-text" id="inputGroup-sizing-default2">Tipo</span>
+            <select id="tipo" name="tipo" class="form-control">
+              <option value="pequeno">pequeno</option>
+              <option value="medio">médio</option>
+              <option value="SUV">SUV</option>
+            </select>
         </div>
-
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default2">Marca</span>
-          <input type="text" name="marca" class="form-control">
+            <select id="marca" name="marca" class="form-control">
+              <option value="chevrolet">Chevrolet</option>
+              <option value="fiat">Fiat</option>
+              <option value="ford">Ford</option>
+              <option value="hyundai">Hyundai</option>
+              <option value="vw">VW</option>
+            </select>
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default3">Modelo</span>
-          <input type="text" name="modelo" class="form-control">
+          <span class="input-group-text" id="inputGroup-sizing-default2">Modelo</span>
+            <select id="modelo" name="modelo" class="form-control">
+              <option value="Creta">VW</option>
+              <option value="Cruize">Chevrolet</option>
+              <option value="Focus">Ford</option>
+              <option value="Gol">Fiat</option>
+              <option value="Mobi">Hyundai</option>
+            </select>
         </div>
 
-        <div class="input-group mb-3">
+       <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default3">Data de Retirada</span>
           <input type="date" name="data_retirada" id="data_retirada">
         </div>
@@ -44,4 +57,5 @@
 
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>

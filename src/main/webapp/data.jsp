@@ -52,9 +52,15 @@
           </div>
 
           <div class="mb-3 row">
-            <label for="staticAddress" class="col-md-2 col-form-label">Total Diárias</label>
+            <label for="staticAddress" class="col-md-2 col-form-label">Total diárias</label>
             <div class="col-md-10">
               <input type="number" readonly class="form-control-plaintext" id="staticDiarias" value="<%= request.getAttribute("diarias") %>">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="staticAddress" class="col-md-2 col-form-label">Valor total</label>
+            <div class="col-md-10">
+              <input type="number" readonly class="form-control-plaintext" id="staticPreco" value="<%= request.getAttribute("preco") %>">
             </div>
           </div>
 

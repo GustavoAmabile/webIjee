@@ -25,10 +25,6 @@ public class Cadastro extends HttpServlet {
         String dataDeRetirada = req.getParameter("data_retirada");
         String dataDeDevolucao = req.getParameter("data_devolucao");
 
-
-
-
-
         LocalDate inicioAluguel = LocalDate.parse(dataDeRetirada);
         DateTimeFormatter dataAluguelFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         dataDeRetirada = inicioAluguel.format(dataAluguelFormatter);
@@ -38,7 +34,7 @@ public class Cadastro extends HttpServlet {
         dataDeDevolucao = fimAluguel.format(dataDevolucaoFormatter);
 
         long diarias = ChronoUnit.DAYS.between(inicioAluguel, fimAluguel);
-
+        double preco = Preco.calcularValor(diarias);
         if (
                 tipo.equals("") || marca.equals("") || modelo.equals("")
                 || dataDeRetirada.equals("") || dataDeDevolucao.equals("")
@@ -52,6 +48,7 @@ public class Cadastro extends HttpServlet {
             req.setAttribute("data_retirada", dataDeRetirada);
             req.setAttribute("data_devolucao", dataDeDevolucao);
             req.setAttribute("diarias", diarias);
+            req.setAttribute("preco", preco);
 
             RequestDispatcher rd = req.getRequestDispatcher("data.jsp");
             rd.forward(req, resp);
