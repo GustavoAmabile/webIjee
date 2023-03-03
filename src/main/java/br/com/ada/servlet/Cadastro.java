@@ -19,6 +19,8 @@ public class Cadastro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String nome = req.getParameter("nome");
+        String email = req.getParameter("email");
         String tipo = req.getParameter("tipo");
         String marca = req.getParameter("marca");
         String modelo = req.getParameter("modelo");
@@ -36,12 +38,15 @@ public class Cadastro extends HttpServlet {
         long diarias = ChronoUnit.DAYS.between(inicioAluguel, fimAluguel);
         double preco = Preco.calcularValor(diarias);
         if (
+                nome.equals("") || email.equals("") ||
                 tipo.equals("") || marca.equals("") || modelo.equals("")
                 || dataDeRetirada.equals("") || dataDeDevolucao.equals("")
         ) {
             resp.setContentType("text/html");
             resp.getWriter().println("<h3>Dados obrigatórios não preenchidos!</h3>");
         } else {
+            req.setAttribute("nome", nome);
+            req.setAttribute("email", email);
             req.setAttribute("tipo", tipo);
             req.setAttribute("marca", marca);
             req.setAttribute("modelo", modelo);
