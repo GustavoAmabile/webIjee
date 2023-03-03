@@ -29,58 +29,49 @@
         </div>
       </div>
     </nav>
-
       <%
               String aluguel = (String) request.getAttribute("data_retirada");
               String retorno = (String) request.getAttribute("data_devolucao");
       %>
     <form>
       <div class="container-md">
-
-          <p class="text-center fs-1">Reserva</p>
-
+          <p class="text-center fs-1">Detalhes da Reserva</p>
           <div class="mb-3 row">
              <label for="staticTipo" class="col-md-2 col-form-label">Nome</label>
              <div class="col-md-10">
                <input type="text" readonly class="form-control-plaintext" id="staticNome" value="<%= request.getAttribute("nome") %>" class="form-control">
              </div>
           </div>
-
           <div class="mb-3 row">
              <label for="staticTipo" class="col-md-2 col-form-label">e-mail</label>
              <div class="col-md-10">
                <input type="email" readonly class="form-control-plaintext" id="staticEmail" value="<%= request.getAttribute("email") %>" class="form-control">
              </div>
           </div>
-
           <div class="mb-3 row">
               <label for="staticIdade" class="col-md-2 col-form-label">Marca</label>
               <div class="col-md-10">
                 <input type="text" readonly class="form-control-plaintext" id="staticMarca" value="<%= request.getAttribute("marca") %>">
               </div>
           </div>
-
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Modelo</label>
             <div class="col-md-10">
               <input type="text" readonly class="form-control-plaintext" id="staticModelo" value="<%= request.getAttribute("modelo") %>">
             </div>
           </div>
-
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Retirada</label>
             <div class="col-md-10">
               <input type="text" readonly class="form-control-plaintext" id="staticRetirada" value=<%=aluguel%>>
             </div>
           </div>
-
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Devolução</label>
             <div class="col-md-10">
               <input type="text" readonly class="form-control-plaintext" id="staticDevolução" value=<%=retorno%>>
             </div>
           </div>
-
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Total diárias</label>
             <div class="col-md-10">
@@ -93,7 +84,6 @@
               <input type="number" readonly class="form-control-plaintext" id="staticPreco" value="<%= request.getAttribute("preco") %>">
             </div>
           </div>
-
       </div>
      </form>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
@@ -114,7 +104,6 @@
         </div>
       </footer>
     </body>
-
 </html>
 
 

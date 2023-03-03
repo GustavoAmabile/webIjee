@@ -10,7 +10,6 @@
   <packaging>war</packaging>
 
   <name>car-locate-project Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -33,7 +32,6 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
   <build>
     <finalName>car-locate-project</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

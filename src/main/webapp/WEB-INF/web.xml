@@ -4,16 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-
   <servlet>
     <servlet-name>consultaServlet</servlet-name>
     <servlet-class>br.com.ada.servlet.ConsultaServlet</servlet-class>
   </servlet>
-
   <servlet-mapping>
     <servlet-name>consultaServlet</servlet-name>
     <url-pattern>/consultaServlet2</url-pattern>
   </servlet-mapping>
-
-
 </web-app>

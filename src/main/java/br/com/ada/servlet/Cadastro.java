@@ -6,8 +6,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -36,6 +34,7 @@ public class Cadastro extends HttpServlet {
 
         long diarias = ChronoUnit.DAYS.between(inicioAluguel, fimAluguel);
         double preco = Preco.calcularValor(diarias);
+
         if (
                 nome.equals("") || email.equals("")
                         || marca.equals("") || modelo.equals("")
@@ -56,8 +55,5 @@ public class Cadastro extends HttpServlet {
             RequestDispatcher rd = req.getRequestDispatcher("data.jsp");
             rd.forward(req, resp);
         }
-
     }
-
-
 }

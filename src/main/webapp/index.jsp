@@ -30,21 +30,16 @@
   </div>
 </nav>
 <form action="cadastro" method="POST">
-
     <div class="container-md">
-
-        <p class="text-center fs-1">Ada Locadora</p>
-
+        <p class="text-center fs-1">Reserva</p>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default3">Nome</span>
           <input type="text" name="nome" id="nome" class="form-control">
         </div>
-
         <div class="input-group mb-3">
            <span class="input-group-text" id="inputGroup-sizing-default3">e-mail</span>
            <input type="email" name="email" id="email" class="form-control" placeholder="exemplo@mail.com">
         </div>
-
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default2">Marca</span>
             <select id="marca" name="marca" class="form-control">
@@ -60,35 +55,27 @@
           <span class="input-group-text" id="inputGroup-sizing-default2">Modelo</span>
             <select id="modelo" name="modelo" class="form-control" disabled>
               <option value="">Selecionar marca primeiro</option>
-
             </select>
         </div>
-
        <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default3">Data de Retirada</span>
           <input type="date" name="data_retirada" id="data_retirada" class="form-control">
         </div>
-
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default3">Data de Devolução</span>
           <input type="date" name="data_devolucao" id="data_devolucao" class="form-control">
         </div>
-
         <input type="submit" class="btn btn-primary"/>
-
      </div>
-
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script>
   const dataInicio = document.querySelector('#data_retirada');
   const dataFim = document.querySelector('#data_devolucao');
-
   dataInicio.addEventListener('change', () => {
     dataFim.min = dataInicio.value;
   });
 </script>
-
 <script>
   const marcaSelect = document.getElementById('marca');
   const modeloSelect = document.getElementById('modelo');
@@ -138,7 +125,6 @@
         modeloSelect.add(option);
       }
     }
-
     modeloSelect.disabled = false;
   });
 </script>
@@ -158,7 +144,5 @@
     </div>
   </div>
 </footer>
-
 </body>
-
 </html>
