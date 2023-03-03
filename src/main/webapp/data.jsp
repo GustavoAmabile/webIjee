@@ -54,18 +54,11 @@
           </div>
 
           <div class="mb-3 row">
-            <label for="staticTipo" class="col-md-2 col-form-label">Tipo</label>
-            <div class="col-md-10">
-              <input type="text" readonly class="form-control-plaintext" id="staticTipo" value="<%= request.getAttribute("tipo") %>" class="form-control">
-            </div>
-          </div>
-
-            <div class="mb-3 row">
               <label for="staticIdade" class="col-md-2 col-form-label">Marca</label>
               <div class="col-md-10">
                 <input type="text" readonly class="form-control-plaintext" id="staticMarca" value="<%= request.getAttribute("marca") %>">
               </div>
-            </div>
+          </div>
 
           <div class="mb-3 row">
             <label for="staticAddress" class="col-md-2 col-form-label">Modelo</label>
@@ -100,7 +93,6 @@
               <input type="number" readonly class="form-control-plaintext" id="staticPreco" value="<%= request.getAttribute("preco") %>">
             </div>
           </div>
-
 
       </div>
      </form>

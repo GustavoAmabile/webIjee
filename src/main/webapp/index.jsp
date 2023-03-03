@@ -46,16 +46,6 @@
         </div>
 
         <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default2">Tipo</span>
-            <select id="tipo" name="tipo" class="form-control">
-              <option selected>Selecione o tipo</option>
-              <option value="pequeno">pequeno</option>
-              <option value="medio">médio</option>
-              <option value="SUV">SUV</option>
-            </select>
-        </div>
-
-        <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default2">Marca</span>
             <select id="marca" name="marca" class="form-control">
               <option selected>Selecione a marca</option>
@@ -68,13 +58,9 @@
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default2">Modelo</span>
-            <select id="modelo" name="modelo" class="form-control">
-              <option selected>Selecione o modelo</option>
-              <option value="Creta">VW</option>
-              <option value="Cruize">Cruize</option>
-              <option value="Focus">Focus</option>
-              <option value="Gol">Gol</option>
-              <option value="Mobi">Mobi</option>
+            <select id="modelo" name="modelo" class="form-control" disabled>
+              <option value="">Selecionar marca primeiro</option>
+
             </select>
         </div>
 
@@ -100,6 +86,60 @@
 
   dataInicio.addEventListener('change', () => {
     dataFim.min = dataInicio.value;
+  });
+</script>
+
+<script>
+  const marcaSelect = document.getElementById('marca');
+  const modeloSelect = document.getElementById('modelo');
+
+  marcaSelect.addEventListener('change', () => {
+    modeloSelect.innerHTML = '<option value="">Selecione o modelo</option>';
+    modeloSelect.disabled = true;
+
+    if (marcaSelect.value === 'ford') {
+      const options = ['EcoSport', 'Fiesta', 'Focus', 'Ka'];
+      for (let i = 0; i < options.length; i++) {
+        const option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        modeloSelect.add(option);
+      }
+    } else if (marcaSelect.value === 'chevrolet') {
+      const options = ['Cruize', 'Onix', 'Onix Sedan', 'Tracker'];
+      for (let i = 0; i < options.length; i++) {
+        const option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        modeloSelect.add(option);
+      }
+    } else if (marcaSelect.value === 'fiat') {
+      const options = ['Argo', 'Chronos', 'Strada', 'Toro'];
+      for (let i = 0; i < options.length; i++) {
+        const option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        modeloSelect.add(option);
+      }
+    } else if (marcaSelect.value === 'hyundai') {
+      const options = ['HB20', 'HB20 Sedan', 'Creta', 'Tucson'];
+      for (let i = 0; i < options.length; i++) {
+        const option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        modeloSelect.add(option);
+      }
+    } else if (marcaSelect.value === 'vw') {
+      const options = ['Gol', 'Novo Polo', 'Tiguan', 'Virtus'];
+      for (let i = 0; i < options.length; i++) {
+        const option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        modeloSelect.add(option);
+      }
+    }
+
+    modeloSelect.disabled = false;
   });
 </script>
 <footer class="bg-light text-dark py-3">
